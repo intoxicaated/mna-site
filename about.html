@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – MNA International Co.</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Saudi Arabia • Jeddah & Beyond</span>
+      <a href="tel:+966547433452">Call: +966 54 743 3452 / +966 54 164 4669</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo-block">
+        <div class="logo-circle">M</div>
+        <div class="logo-text">
+          <span class="logo-main">MNA International Co.</span>
+          <span class="logo-sub">Construction & Infrastructure</span>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active-page">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="btn-nav">Request Quote</a>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ABOUT HERO -->
+<section class="about-hero">
+  
+  <!-- PARTICLE OVERLAY -->
+  <div class="about-particles"></div>
+
+  <!-- HERO VIDEO WITH FALLBACK IMAGE -->
+  <video id="aboutHeroVideo" class="about-hero-video" autoplay muted playsinline poster="./img/about-fallback.jpg"></video>
+
+  <div class="container about-hero-content">
+    <h1 class="about-title">About MNA International</h1>
+    <p class="about-subtitle">
+      A decade of practical engineering, disciplined delivery, and long-term partnerships across the Kingdom.
+    </p>
+  </div>
+</section>
+
+<script>
+  const video = document.getElementById("aboutHeroVideo");
+
+  const videoSources = [
+    "./img/about-bg-1.mp4",
+    "./img/about-bg-2.mp4"
+  ];
+
+  let currentIndex = 0;
+
+  // Fade duration (ms)
+  const fadeTime = 700;
+
+  function playNextVideo() {
+    // Fade out
+    video.style.opacity = 0;
+
+    setTimeout(() => {
+      // Switch video source
+      currentIndex = (currentIndex + 1) % videoSources.length;
+      video.src = videoSources[currentIndex];
+
+      // Reload and play
+      video.load();
+      video.play();
+
+      // Fade back in
+      video.style.opacity = 1;
+
+    }, fadeTime);
+  }
+
+  // Play first video
+  video.src = videoSources[currentIndex];
+  video.play();
+
+  // When video ends -> play next one
+  video.addEventListener("ended", playNextVideo);
+</script>
+
+<script>
+/* === PARALLAX EFFECT === */
+window.addEventListener("scroll", () => {
+  const hero = document.querySelector(".about-hero");
+
+  if (!hero) return;
+
+  const offset = window.scrollY * 0.15;
+  hero.style.setProperty("--scroll-offset", offset + "px");
+
+  if (offset > 0) hero.classList.add("parallax-active");
+  else hero.classList.remove("parallax-active");
+});
+
+/* === PARTICLE GENERATOR === */
+const particleContainer = document.querySelector(".about-particles");
+
+if (particleContainer) {
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement("div");
+    p.classList.add("particle");
+
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = 6 + Math.random() * 4 + "s";
+    p.style.animationDelay = Math.random() * 5 + "s";
+
+    particleContainer.appendChild(p);
+  }
+}
+</script>
+
+    <!-- COMPANY OVERVIEW -->
+    <section class="section about-intro">
+      <div class="container two-col">
+
+        <div data-aos="fade-right">
+          <h2>Who we are</h2>
+          <p>
+            MNA International Co. is a construction and infrastructure firm
+            operating across Saudi Arabia, specializing in industrial, commercial,
+            and residential development.
+          </p>
+          <p>
+            Our philosophy is simple: 
+            <strong>build with clarity, deliver with integrity, and communicate with transparency.</strong>
+          </p>
+        </div>
+
+        <!-- VALUES CARD (renamed to match CSS) -->
+        <div class="values-card" data-aos="fade-left">
+          <h3>Our focus</h3>
+          <p>Reliable and documented delivery</p>
+          <p>Clear pricing and controlled project scopes</p>
+          <p>Safety-aligned construction & quality control</p>
+          <p>Long-term client relationships</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2>Our journey</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item" data-aos="fade-up">
+    <span class="timeline-dot"></span>   <!-- ADD THIS -->
+    <span class="timeline-year">2010–2015</span>
+    <p class="timeline-text">Regional contracting across Pakistan and the Gulf.</p>
+</div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+            <span class="timeline-dot"></span>
+            <span class="timeline-year">2016–2021</span>
+            <p class="timeline-text">
+              Growth into a preferred subcontractor known for clean handover and disciplined execution.
+            </p>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+            <span class="timeline-dot"></span>
+            <span class="timeline-year">2022–Present</span>
+            <p class="timeline-text">
+              Expansion into Saudi Arabia with a focus on warehousing, commercial units
+              and modern housing aligned with Vision 2030.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section class="section about-who">
+  <div class="container about-who-grid">
+
+    <!-- LEFT: Video -->
+    <div class="about-who-video">
+      <video autoplay muted loop playsinline class="about-video">
+        <source src="img/about-who-1.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- RIGHT: Text -->
+    <div class="about-who-text">
+      <h2>Who We Are</h2>
+      <p>
+        MNA International Co. is a Saudi-based construction and infrastructure contractor 
+        focused on practical engineering, disciplined execution, and transparent communication. 
+        Our approach is built on real-world site experience; not theory, not shortcuts.
+      </p>
+      <p>
+        Everything we deliver follows one principle: 
+        <strong>build with clarity, hand over with confidence.</strong>
+        Every project is documented, controlled, and executed with long-term durability in mind.
+      </p>
+
+      <div class="focus-box">
+        <h3>Our Focus</h3>
+        <ul>
+          <li><span>✔</span> Reliable timelines & clean handovers</li>
+          <li><span>✔</span> Clear pricing + controlled project scope</li>
+          <li><span>✔</span> Strong QC practices & safety alignment</li>
+          <li><span>✔</span> Long-term client collaboration</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> MNA International Co. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <script>
+  const toggleBtn = document.getElementById("theme-toggle");
+
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // Save preference
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+});
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      toggle.textContent = "☀️";
+      localStorage.setItem("theme", "dark");
+    } else {
+      toggle.textContent = "🌙";
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
+
+</body>
+</html>
