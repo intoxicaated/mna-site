@@ -81,7 +81,7 @@
     <div class="hero-right">
       <div class="hero-card">
         <div class="hero-card-header">
-          <img src="img/MNA-Logo.jpg" class="hero-card-logo" alt="MNA Logo">
+          <img src="img/MNA-Logo.jpg" class="hero-card-logo">
           <div class="hero-card-text">
             <p class="hero-card-label">Trusted project delivery</p>
             <h2>Project Snapshot</h2>
@@ -383,6 +383,12 @@ toggleBtn.addEventListener("click", () => {
 </script>
 
 <script src="./js/theme.js"></script>
+
+<script>
+document.querySelector(".nav-toggle").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("open");
+});
+</script>
 
 </body>
 </html>

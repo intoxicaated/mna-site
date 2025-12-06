@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Projects – MNA International Co.</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>Saudi Arabia • Jeddah & Beyond</span>
+    <a href="tel:547433452">Call: +966 54 743 3452 / +966 54 164 4669</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <div class="logo-block">
+      <div class="logo-circle">M</div>
+      <div class="logo-text">
+        <span class="logo-main">MNA International Co.</span>
+        <span class="logo-sub">Construction & Infrastructure</span>
+      </div>
+    </div>
+
+    <button class="nav-toggle">☰</button>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html" class="active-page">Projects</a>
+      <a href="contact.html" class="btn-nav">Request Quote</a>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- PAGE HERO -->
+<section class="section">
+  <div class="container" data-aos="fade-up">
+    <h1 class="page-title">Our Projects</h1>
+    <p class="section-lead">
+      Explore a selection of industrial, commercial, and fit-out projects delivered across the Kingdom.
+    </p>
+  </div>
+</section>
+
+<!-- PROJECT GRID -->
+<section class="section section-alt">
+  <div class="container" data-aos="fade-up" data-aos-offset="120">
+
+    <div class="cards-grid projects-grid">
+
+      <!-- PROJECT 1 -->
+      <article class="project-card-img">
+        <img src="img/project-1.jpg" alt="">
+        <div class="project-card-content">
+          <span class="project-category">Industrial</span>
+          <h3 class="project-title">Titanium Research Facility</h3>
+          <p class="project-status">Completed</p>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="project-card-img">
+        <img src="img/project-2.jpg" alt="">
+        <div class="project-card-content">
+          <span class="project-category">Fit-Out</span>
+          <h3 class="project-title">Corporate Office Fit-Out – Riyadh</h3>
+          <p class="project-status">Completed</p>
+        </div>
+      </article>
+
+      <!-- PROJECT 3 -->
+      <article class="project-card-img">
+        <img src="img/project-3.jpg" alt="">
+        <div class="project-card-content">
+          <span class="project-category">Infrastructure</span>
+          <h3 class="project-title">Metro Line Expansion</h3>
+          <p class="project-status">In Progress</p>
+        </div>
+      </article>
+
+      <!-- PROJECT 4 -->
+      <article class="project-card-img">
+        <img src="img/project-4.jpg" alt="">
+        <div class="project-card-content">
+          <span class="project-category">Infrastructure</span>
+          <h3 class="project-title">High-Rise Structure Development</h3>
+          <p class="project-status">In Progress</p>
+        </div>
+      </article>
+
+      <!-- PROJECT 5 -->
+      <article class="project-card-img">
+        <img src="img/project-5.jpg" alt="">
+        <div class="project-card-content">
+          <span class="project-category">Infrastructure</span>
+          <h3 class="project-title">City Tower Expansion</h3>
+          <p class="project-status">Completed</p>
+        </div>
+      </article>
+
+      <!-- PROJECT 6 -->
+      <article class="project-card-img">
+        <img src="img/project-6.jpg" alt="">
+        <div class="project-card-content">
+          <span class="project-category">Infrastructure</span>
+          <h3 class="project-title">Modern Vertical Complex</h3>
+          <p class="project-status">Completed</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> MNA International Co. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Scripts identical to other pages -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="./js/theme.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration:700, once:true });</script>
+
+<script>
+document.querySelector(".nav-toggle").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("open");
+});
+</script>
+
+</body>
+</html>
