@@ -3622,3 +3622,13 @@ body.dark-mode .theme-toggle {
         display: flex;
     }
 }
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: #22ff55;
+  box-shadow: 0 0 6px #22ff55, 0 0 12px #22ff55;
+}
