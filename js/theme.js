@@ -1,11 +1,21 @@
-const toggleBtn = document.getElementById("themeToggle");
+const themeToggle = document.getElementById("themeToggle");
+const themeLabel = document.querySelector(".theme-label");
 
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+function updateThemeLabel() {
+  const isDark = document.body.classList.contains("dark");
 
-    if (document.body.classList.contains("dark-mode")) {
-        toggleBtn.textContent = "☀️";
-    } else {
-        toggleBtn.textContent = "🌙";
-    }
+  if (isDark) {
+    themeLabel.innerHTML = `Dark Mode <span class="status-dot"></span>`;
+    themeToggle.textContent = "☀️";
+  } else {
+    themeLabel.innerHTML = `Light Mode <span class="status-dot"></span>`;
+    themeToggle.textContent = "🌙";
+  }
+}
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  updateThemeLabel();
 });
+
+updateThemeLabel();

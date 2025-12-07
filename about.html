@@ -21,13 +21,16 @@
   <header class="navbar">
     <div class="container nav-inner">
       <div class="logo-block">
-        <div class="logo-circle">M</div>
+        <div class="logo-block">
+  <img src="img/MNA-Logo.jpg" alt="MNA Logo" class="logo-img">
         <div class="logo-text">
           <span class="logo-main">MNA International Co.</span>
           <span class="logo-sub">Construction & Infrastructure</span>
         </div>
       </div>
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+      <div class="nav-right">
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html" class="active-page">About</a>
@@ -35,6 +38,7 @@
         <a href="projects.html">Projects</a>
         <a href="contact.html" class="btn-nav">Request Quote</a>
         <button class="theme-toggle" id="themeToggle">🌙</button>
+        <span class="theme-label">Light mode</span>
       </nav>
     </div>
   </header>
@@ -248,29 +252,32 @@ if (particleContainer) {
   <script>AOS.init();</script>
 
     <!-- Dark Mode Script -->
-    <script>
-const toggleBtn = document.getElementById("themeToggle");
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("themeToggle");
 
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    toggleBtn.textContent = "☀️";
-}
-
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-        toggleBtn.textContent = "☀️";
-        localStorage.setItem("theme", "dark");
-    } else {
-        toggleBtn.textContent = "🌙";
-        localStorage.setItem("theme", "light");
+    function applySavedTheme() {
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark") {
+            document.body.classList.add("dark-mode");
+            toggleBtn.textContent = "☀️";
+        } else {
+            document.body.classList.remove("dark-mode");
+            toggleBtn.textContent = "🌙";
+        }
     }
+
+    // Load saved theme
+    applySavedTheme();
+
+    // Toggle
+    toggleBtn.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    });
 });
 </script>
-
-<script src="./js/theme.js"></script>
 
 <script>
 document.querySelector(".nav-toggle").addEventListener("click", () => {
